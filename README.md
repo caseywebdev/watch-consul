@@ -6,8 +6,11 @@ callback initially and whenever a change occurs.
 ```js
 import watchConsul from 'watch-consul';
 
-watchConsul({
-  url: 'my-consul-server:8500',
-  key: '/my/key/to/watch',
-}, value => console.log(value)).catch(er => console.error(er));
+const watch = () =>
+  watchConsul({url: 'my-consul-server:8500', key: '/my/key/to/watch'})
+    .then(console.log.bind(console))
+    .catch(console.error.bind(console))
+    .then(watch);
+
+watch();
 ```

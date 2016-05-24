@@ -1,6 +1,6 @@
 {
   "name": "watch-consul",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "dependencies": {
     "node-fetch": "1",
     "underscore": "1.8.3"
